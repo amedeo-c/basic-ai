@@ -1,0 +1,16 @@
+.vs/
+Library/
+Logs/
+Builds/
+obj/
+Temp/
+*.sln
+*.csproj
+Assets/Ludiq/Bolt.Flow/Generated/*.db
+Assets/Ludiq/Bolt.Flow/Generated/*.db.meta
+UserSettings/
+.vsconfig
+Packages/packages-lock.json
+*.apk
+Assets/UnityProjectCloner-master
+UnityProjectCloner-master.meta
