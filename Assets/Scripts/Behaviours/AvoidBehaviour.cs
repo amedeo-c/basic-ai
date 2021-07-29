@@ -13,8 +13,6 @@ namespace SteeringBehaviours
         public float maxAngle;
         public float oppositionAngle;
 
-        public bool rightTendency;
-
         protected float obstacleAngle;
         protected Vector3 obstaclePoint;
         protected float obstacleDistance;

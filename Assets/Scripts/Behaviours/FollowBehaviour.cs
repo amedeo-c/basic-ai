@@ -6,41 +6,24 @@ namespace SteeringBehaviours
 {
     public class FollowBehaviour : SteeringBehaviour
     {
+        public Agent targetAgent;
+
         public float minDistance;
         public float maxDistance;
         public float boostFactor = 1.3f;
 
         public bool faceTarget;
 
-        public Transform target;
-
-        public Agent targetAgent;
-
-        public Transform Target
-        {
-            get
-            {
-                return target;
-            }
-            set
-            {
-                target = value;
-                targetAgent = target.GetComponent<Agent>();
-
-                Debug.Assert(targetAgent != null);
-            }
-        }
-
         public override SteeringOutput GetOutput()
         {
-            if (target == null)
+            if (targetAgent == null)
             {
                 return new SteeringOutput();
             }
 
-            if(faceTarget) transform.LookAt(target);
+            if(faceTarget) transform.LookAt(targetAgent.transform);
 
-            Vector3 dir = target.position - transform.position;
+            Vector3 dir = targetAgent.transform.position - transform.position;
 
             float squareDist = dir.sqrMagnitude;
             if (squareDist < minDistance * minDistance)

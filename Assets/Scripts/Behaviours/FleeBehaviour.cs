@@ -7,11 +7,13 @@ namespace SteeringBehaviours
     {
         public Transform target;
 
+        public float minDistance;
+
         public override SteeringOutput GetOutput()
         {
             if (target != null)
             {
-                return Flee(target.position);
+                return Flee(target.position, minDistance);
             }
             else
             {
